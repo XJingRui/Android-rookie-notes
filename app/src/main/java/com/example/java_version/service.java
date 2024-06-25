@@ -69,6 +69,8 @@ public class service extends AppCompatActivity {
 //        为什么调试的时候注释执行顺序改变了
     }
     //    =========================broarcast============================
+
+    
 //    动态广播 3/3 发出广播
     public void broadcast(View view) {
         Intent intent = new Intent();
