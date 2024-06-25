@@ -1,11 +1,8 @@
 package com.example.java_version;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
-import android.media.metrics.Event;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.util.EventLog;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
@@ -17,8 +14,6 @@ import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-
-import java.security.PublicKey;
 
 //
 /*常用控件
@@ -49,12 +44,12 @@ mqtt 相关函数 开始重连 连接 初始化
 
 
 
-public class MainActivity extends AppCompatActivity {
+public class ActMainActivity extends AppCompatActivity {
    private Button btn_1,btn_long,btn_touch,btn_e,btn_log;
    private ImageView image_1;
    private TextView textView_1;
    private EditText edit,password;
-    private final  String TAG = MainActivity.class.getSimpleName();
+    private final  String TAG = ActMainActivity.class.getSimpleName();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,6 +67,7 @@ public class MainActivity extends AppCompatActivity {
 //        });
         ui_init();
         Dbinit();
+        Log.d("lenientxx","Dbinit();");
         btn_1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -118,7 +114,7 @@ public class MainActivity extends AppCompatActivity {
         String uname = edit.getText().toString().trim();
         String upass = password.getText().toString().trim();
         if(TextUtils.isEmpty(uname)){
-        showMsg("name");
+        showMsg("name is wrong");
         } else if (TextUtils.isEmpty(upass)) {
             showMsg("password");
         }
@@ -133,14 +129,15 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void Dbinit(){
-        USinfo user = SPData.getUserinfo(this);
-        Log.d("lenientx",edit+"edit");
-        if(user!=null && !TextUtils.isEmpty(user.getName())){
-            edit.setText(user.getName());
-            password.setText(user.getPassword());
-            Log.d("lenientx",edit+"edit");
-            Log.d("lenientx",password+"edit");
-        }
+//        USinfo user = SPData.getUserinfo(this);
+//        Log.d("lenientx",edit+"edit");
+//        if( user!=null && !TextUtils.isEmpty(user.getName())){
+//            edit.setText(user.getName());
+//            Log.d("lenientx",user.getName()+"edit");
+//            password.setText(user.getPassword());
+//            Log.d("lenientx",user.getPassword()+"edit");
+//        }
+
 
     }
     private void ui_init() {
@@ -152,12 +149,13 @@ public class MainActivity extends AppCompatActivity {
 //        image_1 = findViewById(R.id.image_1);
         textView_1 = findViewById(R.id.textView_1);
         edit = findViewById(R.id.edit);
+        Log.d("lenientx","获取到的edit"+edit+"edit");
         password = findViewById(R.id.password);
     }
 
     public void arrow_action(View view) {
 
-        Toast.makeText(MainActivity.this,"this is a image",Toast.LENGTH_SHORT).show();
+        Toast.makeText(ActMainActivity.this,"this is a image",Toast.LENGTH_SHORT).show();
 
     }
 //显式 跳转  从前面到后面的意图  还可以用setclass  setclassname  setcomponent
@@ -165,7 +163,7 @@ public class MainActivity extends AppCompatActivity {
 //    页面跳转传递参数
 //    返回参数 startActivityForResult(); 已经启用
     public void startactivity2(View view) {
-        Intent intent = new Intent(this,vp.class);
+        Intent intent = new Intent(this, ActVp.class);
         Bundle bundle = new Bundle();
         bundle.putString("name","lenient");
         bundle.putInt("number",88);
@@ -175,11 +173,22 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
     public void startactivity3(View view) {
-        Intent intent = new Intent(this,newactivity.class);
+        Intent intent = new Intent(this, ActNew.class);
        Bundle bundle = new Bundle();
        intent.putExtra("age",18);
        intent.putExtras(bundle);
         startActivity(intent);
+    }
+
+    public void selectPass(View view) {
+        USinfo user = SPData.getUserinfo(this);
+        Log.d("lenientx",edit+"edit");
+        if( user!=null && !TextUtils.isEmpty(user.getName())){
+            edit.setText(user.getName());
+            Log.d("lenientx",user.getName()+"edit");
+            password.setText(user.getPassword());
+            Log.d("lenientx",user.getPassword()+"edit");
+        }
     }
 
 /*

@@ -3,7 +3,6 @@ package com.example.java_version;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.animation.ObjectAnimator;
-import android.animation.ValueAnimator;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -14,16 +13,13 @@ import android.widget.TextView;
 import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 import androidx.viewpager.widget.ViewPager;
 
 import java.util.ArrayList;
 
-public class newactivity extends AppCompatActivity {
+public class ActNew extends AppCompatActivity {
 
-    private final  String TAG = MainActivity.class.getSimpleName();
+    private final  String TAG = ActMainActivity.class.getSimpleName();
 private TextView textView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -113,6 +109,6 @@ private TextView textView;
 
 
     public void tioazhaun1(View view) {
-        startActivity(new Intent(this,MainActivity.class));
+        startActivity(new Intent(this, ActMainActivity.class));
     }
 }

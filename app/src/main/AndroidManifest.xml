@@ -13,32 +13,37 @@
         android:theme="@style/Theme.Java_version"
         tools:targetApi="31">
         <activity
-            android:name=".MainActivity"
+            android:name=".ActMainActivity"
             android:exported="false"
             android:launchMode="singleInstancePerTask"/>
 
         <!-- 在组件清单里面注册 -->
         <activity
-            android:name=".newactivity"
+            android:name=".ActNew"
             android:exported="false"
             android:label="A"
             android:launchMode="singleInstancePerTask" />
         <activity
-            android:name=".service"
+            android:name=".ActService"
             android:exported="false"
             android:label="A"
-            android:launchMode="singleInstancePerTask" />
+             />
         <activity
-            android:name=".vp"
+            android:name=".ActVp"
             android:exported="false"
             android:label="A"
-            android:launchMode="singleInstancePerTask" />
-
+             />
+        <activity
+            android:name=".ActMySqlite"
+            android:exported="false"
+            android:label="A"
+            />
 <!--    MainActivity  newactivity  -->
         <activity
-            android:name=".mainInterface"
+            android:name=".ActMainInterface"
             android:exported="true"
             android:label="MAIN"
+            android:launchMode="singleInstancePerTask"
             >
 <!--            设置activity启动模式     -->
             <intent-filter>
@@ -47,6 +52,8 @@
             </intent-filter>
         </activity>
         <service android:name=".myService"/>
+
+
     </application>
 
 </manifest>

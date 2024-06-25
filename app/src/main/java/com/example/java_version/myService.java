@@ -7,6 +7,7 @@ import android.util.Log;
 
 import androidx.annotation.Nullable;
 
+// service服务 1/2 创建自己的服务框架
 public class myService extends Service{
 private final static  String TAG = "lenientX";
     @Nullable

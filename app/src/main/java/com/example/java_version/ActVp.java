@@ -5,13 +5,9 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.TableLayout;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 import androidx.viewpager.widget.ViewPager;
 
 import com.google.android.material.tabs.TabLayout;
@@ -19,7 +15,7 @@ import com.google.android.material.tabs.TabLayout;
 import java.util.ArrayList;
 import java.util.List;
 
-public class vp extends AppCompatActivity implements View.OnClickListener{
+public class ActVp extends AppCompatActivity implements View.OnClickListener{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,7 +43,7 @@ public class vp extends AppCompatActivity implements View.OnClickListener{
         Log.d("lenient","pppppppppppppppppv");
     }
     public void backmain(View view) {
-        startActivity(new Intent(this,service.class));
+        startActivity(new Intent(this, ActService.class));
         Log.d("lenient","这个是跳转页面");
     }
     public void closeact(View view) {
