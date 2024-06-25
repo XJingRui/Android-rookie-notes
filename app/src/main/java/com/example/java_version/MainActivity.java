@@ -2,6 +2,7 @@ package com.example.java_version;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.media.metrics.Event;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -72,6 +73,7 @@ public class MainActivity extends AppCompatActivity {
 //        });
         ui_init();
         Dbinit();
+        Log.d("lenientxx","Dbinit();");
         btn_1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -118,7 +120,7 @@ public class MainActivity extends AppCompatActivity {
         String uname = edit.getText().toString().trim();
         String upass = password.getText().toString().trim();
         if(TextUtils.isEmpty(uname)){
-        showMsg("name");
+        showMsg("name is wrong");
         } else if (TextUtils.isEmpty(upass)) {
             showMsg("password");
         }
@@ -133,14 +135,15 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void Dbinit(){
-        USinfo user = SPData.getUserinfo(this);
-        Log.d("lenientx",edit+"edit");
-        if(user!=null && !TextUtils.isEmpty(user.getName())){
-            edit.setText(user.getName());
-            password.setText(user.getPassword());
-            Log.d("lenientx",edit+"edit");
-            Log.d("lenientx",password+"edit");
-        }
+//        USinfo user = SPData.getUserinfo(this);
+//        Log.d("lenientx",edit+"edit");
+//        if( user!=null && !TextUtils.isEmpty(user.getName())){
+//            edit.setText(user.getName());
+//            Log.d("lenientx",user.getName()+"edit");
+//            password.setText(user.getPassword());
+//            Log.d("lenientx",user.getPassword()+"edit");
+//        }
+
 
     }
     private void ui_init() {
@@ -152,6 +155,7 @@ public class MainActivity extends AppCompatActivity {
 //        image_1 = findViewById(R.id.image_1);
         textView_1 = findViewById(R.id.textView_1);
         edit = findViewById(R.id.edit);
+        Log.d("lenientx","获取到的edit"+edit+"edit");
         password = findViewById(R.id.password);
     }
 
@@ -180,6 +184,17 @@ public class MainActivity extends AppCompatActivity {
        intent.putExtra("age",18);
        intent.putExtras(bundle);
         startActivity(intent);
+    }
+
+    public void selectPass(View view) {
+        USinfo user = SPData.getUserinfo(this);
+        Log.d("lenientx",edit+"edit");
+        if( user!=null && !TextUtils.isEmpty(user.getName())){
+            edit.setText(user.getName());
+            Log.d("lenientx",user.getName()+"edit");
+            password.setText(user.getPassword());
+            Log.d("lenientx",user.getPassword()+"edit");
+        }
     }
 
 /*

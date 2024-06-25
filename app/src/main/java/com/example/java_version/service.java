@@ -70,7 +70,7 @@ public class service extends AppCompatActivity {
     }
     //    =========================broarcast============================
 
-    
+
 //    动态广播 3/3 发出广播
     public void broadcast(View view) {
         Intent intent = new Intent();

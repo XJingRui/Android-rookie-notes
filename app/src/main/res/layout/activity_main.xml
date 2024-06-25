@@ -214,6 +214,7 @@
             android:drawableRight="@drawable/baseline_arrow_forward_24"
             android:padding="10dp"
             android:background="@color/blue2"
+            android:onClick="selectPass"
             />
         <EditText
             android:layout_width="412dp"

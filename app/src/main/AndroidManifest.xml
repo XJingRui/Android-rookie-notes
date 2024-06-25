@@ -27,18 +27,19 @@
             android:name=".service"
             android:exported="false"
             android:label="A"
-            android:launchMode="singleInstancePerTask" />
+             />
         <activity
             android:name=".vp"
             android:exported="false"
             android:label="A"
-            android:launchMode="singleInstancePerTask" />
+             />
 
 <!--    MainActivity  newactivity  -->
         <activity
             android:name=".mainInterface"
             android:exported="true"
             android:label="MAIN"
+            android:launchMode="singleInstancePerTask"
             >
 <!--            设置activity启动模式     -->
             <intent-filter>
