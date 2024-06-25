@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Java_version"
+        tools:targetApi="31">
+        <activity
+            android:name=".MainActivity"
+            android:exported="false"
+            android:launchMode="singleInstancePerTask"/>
+
+        <!-- 在组件清单里面注册 -->
+        <activity
+            android:name=".newactivity"
+            android:exported="false"
+            android:label="A"
+            android:launchMode="singleInstancePerTask" />
+        <activity
+            android:name=".service"
+            android:exported="false"
+            android:label="A"
+            android:launchMode="singleInstancePerTask" />
+        <activity
+            android:name=".vp"
+            android:exported="false"
+            android:label="A"
+            android:launchMode="singleInstancePerTask" />
+
+<!--    MainActivity  newactivity  -->
+        <activity
+            android:name=".mainInterface"
+            android:exported="true"
+            android:label="MAIN"
+            >
+<!--            设置activity启动模式     -->
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <service android:name=".myService"/>
+    </application>
+
+</manifest>
+<!--组件必须在清单里面注册-->

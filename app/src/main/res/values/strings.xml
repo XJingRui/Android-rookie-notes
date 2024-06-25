@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">java_version</string>
+    <string name="name_one">hello_lenient hello_lenient hello_lenient hello_lenient hello_lenient</string>
+    <string name="hello_lenient">Hello lenient!</string>
+    <string name="bottom_one">按钮</string>
+    <string name="edittext_name">请输入名称</string>
+    <string name="text">TODO</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="mntext">自定义控件</string>
+</resources>

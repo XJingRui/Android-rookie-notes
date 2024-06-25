@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<!--    //定义一套属性集合，这套属性集合命名为：MyView(随意命名)-->
+<!--    自定义属性文件-->
+    <declare-styleable name="MyView">
+        <attr name="mncolor" format="string"/>
+        <attr name="mnsize" format="dimension" />
+        <attr name="mntext" format="string" />
+    </declare-styleable>
+</resources>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".BlankFragment1"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:layout_gravity="center_horizontal"
+    >
+
+
+
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="500dp"
+    >
+    <android.widget.Button
+        android:id="@+id/btn_service_start"
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="95dp"
+        android:layout_marginBottom="352dp"
+        android:text="start"
+        android:onClick="service_start"/>
+
+    <android.widget.Button
+        android:id="@+id/btn_service_stop"
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="274dp"
+        android:layout_marginBottom="349dp"
+        android:text="stop"
+        android:onClick="service_stop"/>
+
+    <android.widget.Button
+        android:id="@+id/btn_service_unbind"
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="95dp"
+        android:layout_marginBottom="152dp"
+        android:text="bind"
+        android:onClick="service_bind"/>
+
+    <android.widget.Button
+        android:id="@+id/btn_service_bind"
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="274dp"
+        android:layout_marginBottom="152dp"
+        android:text="unbind"
+        android:onClick="service_unbind"/>
+
+    <android.widget.Button
+        android:id="@+id/next"
+        android:layout_width="240dp"
+        android:layout_height="40dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="15dp"
+        android:text="动态发送广播"
+        android:onClick="broadcast"/>
+</RelativeLayout>
+
+
+</LinearLayout>
